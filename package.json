@@ -9,7 +9,10 @@
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "claket": "file:"
+  },
   "devDependencies": {
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^6.4.1",
