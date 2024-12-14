@@ -1,6 +1,6 @@
 <template>
   <section class="min-h-screen bg-base-100 overflow-x-hidden">
-    <Palette v-if="ready" />
+    <Palette v-if="ready"  @play-sound-main="onPlaySoundMain" />
     <div class="hero min-h-screen bg-base-200" v-if="error">
       <div class="text-center hero-content animate__animated animate__zoomIn">
         <div class="max-w-xl">
@@ -66,6 +66,13 @@ export default {
   computed: {
     haveEnoughAudio() {
       return this.$store.state.audios.length < 2
+    },
+  },
+  methods: {
+    onPlaySoundMain() {
+      if (!this.haveEnoughAudio) {
+        this.collapse = false;
+      }
     },
   },
   mounted() {

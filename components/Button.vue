@@ -124,6 +124,13 @@ export default {
         file: this.sound,
         coef: this.coef,
       })
+
+      this.$emit('play-sound', {
+        page: this.page,
+        index: this.index,
+        sound: this.sound,
+        coef: this.coef,
+      });
     },
     changeCoef() {
       this.$store.commit('changeCoef', {

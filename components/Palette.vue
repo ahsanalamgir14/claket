@@ -101,7 +101,8 @@
       <div :class="`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-5 transition-all duration-300 ${!haveAudio ? 'mb-20' : ''
         }`">
         <Button v-for="n in 24" :key="n" :page="page" :index="n" class="animate__animated animate__zoomIn"
-          :style="'animation-delay: ' + n * 30 + 'ms'" />
+          :style="'animation-delay: ' + n * 30 + 'ms'"
+          @play-sound="onPlaySound" />
       </div>
     </section>
   </div>
@@ -215,6 +216,9 @@ export default {
     },
   },
   methods: {
+    onPlaySound(data) {
+      this.$emit('play-sound-main');
+    },
     copyRepoUrl() {
       this.repoIsCopied = true
       navigator.clipboard.writeText('https://github.com/aera128/claket')
